@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — Nest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7f3ec;
+    --card:#fffdf9;
+    --ink:#2b2722;
+    --ink-body:#3a342b;
+    --ink-soft:#6f675b;
+    --sage:#43614d;
+    --sage-deep:#314838;
+    --rule:#e2dac9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink-body);
+    font-family:'Hanken Grotesk',-apple-system,sans-serif;
+    font-size:17px;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:60px 28px 100px;}
+
+  .masthead{border-bottom:1px solid var(--rule);padding-bottom:30px;margin-bottom:38px;}
+  .brand{
+    font-family:'Fraunces',serif;font-weight:600;font-size:21px;
+    letter-spacing:-0.01em;color:var(--sage-deep);
+    display:inline-flex;align-items:center;gap:9px;
+  }
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--sage);display:inline-block;}
+  .doc-title{
+    font-family:'Fraunces',serif;font-weight:600;
+    font-size:clamp(33px,7vw,45px);line-height:1.08;
+    letter-spacing:-0.022em;color:var(--ink);margin-top:20px;
+  }
+  .updated{
+    color:var(--ink-soft);font-size:13.5px;margin-top:14px;
+    letter-spacing:0.03em;text-transform:uppercase;
+  }
+
+  .lead{
+    font-size:18.5px;color:var(--ink-soft);line-height:1.62;
+    margin-bottom:42px;
+  }
+
+  .toc{
+    background:var(--card);border:1px solid var(--rule);
+    border-radius:14px;padding:24px 26px;margin-bottom:50px;
+  }
+  .toc h2{
+    font-size:11.5px;text-transform:uppercase;letter-spacing:0.15em;
+    color:var(--ink-soft);font-weight:700;margin-bottom:13px;
+  }
+  .toc ol{list-style:none;counter-reset:toc;}
+  .toc li{counter-increment:toc;}
+  .toc a{
+    color:var(--ink);text-decoration:none;font-size:15.5px;
+    display:flex;gap:12px;padding:5px 0;align-items:baseline;
+  }
+  .toc a::before{
+    content:counter(toc,decimal-leading-zero);
+    color:var(--sage);font-weight:700;font-variant-numeric:tabular-nums;
+    font-size:13px;
+  }
+  .toc a:hover{color:var(--sage);}
+
+  section{margin-bottom:36px;scroll-margin-top:22px;}
+  section h2{
+    font-family:'Fraunces',serif;font-weight:600;font-size:23px;
+    letter-spacing:-0.012em;color:var(--ink);
+    margin-bottom:14px;display:flex;gap:13px;align-items:baseline;
+  }
+  section h2 .num{
+    font-family:'Hanken Grotesk',sans-serif;font-size:13px;font-weight:700;
+    color:var(--sage);font-variant-numeric:tabular-nums;
+    flex-shrink:0;transform:translateY(-1px);
+  }
+  section p{margin-bottom:13px;}
+  section p:last-child{margin-bottom:0;}
+  strong{font-weight:700;color:var(--ink);}
+  ul{margin:13px 0;list-style:none;}
+  li.item{padding-left:22px;position:relative;margin-bottom:8px;}
+  li.item::before{
+    content:'';position:absolute;left:3px;top:12px;
+    width:6px;height:6px;background:var(--sage);border-radius:50%;
+  }
+  a.inline{color:var(--sage);text-decoration:underline;text-underline-offset:2px;}
+
+  footer{
+    margin-top:60px;padding-top:26px;border-top:1px solid var(--rule);
+    font-size:14px;color:var(--ink-soft);
+  }
+  footer a{color:var(--sage);}
+  @media(max-width:520px){
+    .wrap{padding:44px 20px 80px;}
+    body{font-size:16px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="brand"><span class="dot"></span>Nest</div>
+    <h1 class="doc-title">Terms of Service</h1>
+    <div class="updated">Last updated: May 22, 2026</div>
+  </header>
+
+  <p class="lead">
+    These Terms set out the agreement between you and Nest. Please read them — by
+    creating an account or using the App, you're agreeing to everything below.
+  </p>
+
+  <nav class="toc">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#agreement">Agreement to these terms</a></li>
+      <li><a href="#eligibility">Eligibility</a></li>
+      <li><a href="#account">Your account</a></li>
+      <li><a href="#service">The service</a></li>
+      <li><a href="#subscriptions">Subscriptions &amp; payments</a></li>
+      <li><a href="#use">Acceptable use</a></li>
+      <li><a href="#content">Your content</a></li>
+      <li><a href="#termination">Termination</a></li>
+      <li><a href="#disclaimers">Disclaimers</a></li>
+      <li><a href="#liability">Limitation of liability</a></li>
+      <li><a href="#indemnity">Indemnification</a></li>
+      <li><a href="#appstores">App store terms</a></li>
+      <li><a href="#changes">Changes to these terms</a></li>
+      <li><a href="#law">Governing law</a></li>
+      <li><a href="#contact">Contact us</a></li>
+    </ol>
+  </nav>
+
+  <section id="agreement">
+    <h2><span class="num">01</span> Agreement to these terms</h2>
+    <p>These Terms of Service ("Terms") govern your use of the Nest mobile application
+      ("Nest", the "App"), provided by <strong>[[PROVIDER NAME]]</strong> ("we", "us",
+      "our"). By creating an account or using Nest, you agree to these Terms and to our
+      <a class="inline" href="privacy.html">Privacy Policy</a>. If you do not agree, please
+      do not use Nest.</p>
+  </section>
+
+  <section id="eligibility">
+    <h2><span class="num">02</span> Eligibility</h2>
+    <p>You must be at least 18 years old to create a Nest account. By creating an account,
+      you confirm that you are 18 or older and that the information you provide is accurate.
+      If you add other people to a family group, you confirm that you have the authority to
+      do so and that you are responsible for their use of the App.</p>
+  </section>
+
+  <section id="account">
+    <h2><span class="num">03</span> Your account</h2>
+    <p>You are responsible for keeping your login credentials confidential and for all
+      activity that occurs under your account. Please notify us promptly at
+      <strong>[[CONTACT EMAIL]]</strong> if you suspect any unauthorized use. We are not
+      liable for losses arising from unauthorized use of your account where you have not
+      kept your credentials secure.</p>
+  </section>
+
+  <section id="service">
+    <h2><span class="num">04</span> The service</h2>
+    <p>Nest helps families coordinate through shared features including a notice board,
+      calendar, reminders, shopping lists, expense splitting, and birthday tracking. We may
+      add, change, or remove features over time.</p>
+    <p>Within a family group, members can view and edit shared content. Family
+      administrators can approve join requests, change member roles, and remove members.
+      Removing a member — or being removed — may affect access to shared content.</p>
+  </section>
+
+  <section id="subscriptions">
+    <h2><span class="num">05</span> Subscriptions &amp; payments</h2>
+    <p>Nest offers a free tier and an optional paid premium subscription.</p>
+    <p><strong>Free tier.</strong> The free tier supports families of up to three members,
+      with some features limited.</p>
+    <p><strong>Premium subscription.</strong> A premium subscription unlocks larger family
+      groups and additional functionality. Premium is offered as a recurring subscription
+      billed through the Apple App Store or Google Play.</p>
+    <p><strong>Billing and auto-renewal.</strong> Subscriptions automatically renew at the
+      end of each billing period unless you cancel at least 24 hours before the period
+      ends. Payment is charged to your Apple or Google account. Your subscription,
+      including renewal and cancellation, is managed through your App Store or Google Play
+      account settings — not through us.</p>
+    <p><strong>Free trial.</strong> If a free trial is offered, any unused portion is
+      forfeited when you purchase a subscription. If you do not cancel before the trial
+      ends, you will be charged for the subscription.</p>
+    <p><strong>Price changes.</strong> We may change subscription prices. Changes apply to
+      future billing periods, and we will provide notice as required by the app stores and
+      applicable law.</p>
+    <p><strong>Refunds.</strong> Purchases are processed by Apple or Google, and refunds are
+      subject to their policies. We generally cannot issue refunds directly; refund
+      requests should be made to the App Store or Google Play.</p>
+  </section>
+
+  <section id="use">
+    <h2><span class="num">06</span> Acceptable use</h2>
+    <p>You agree not to:</p>
+    <ul>
+      <li class="item">Use Nest for any unlawful purpose;</li>
+      <li class="item">Upload content that is illegal, harmful, harassing, or that infringes
+        the rights of others;</li>
+      <li class="item">Attempt to access accounts or data that are not yours;</li>
+      <li class="item">Interfere with, disrupt, or compromise the App or its security;</li>
+      <li class="item">Reverse engineer or attempt to extract the source code, except as
+        permitted by law; or</li>
+      <li class="item">Use the App to send spam or unsolicited messages.</li>
+    </ul>
+  </section>
+
+  <section id="content">
+    <h2><span class="num">07</span> Your content</h2>
+    <p>You retain ownership of the content you create in Nest. You grant us a limited
+      licence to store, process, and display that content as needed to operate the App and
+      provide the service to you and your family group. You are responsible for the content
+      you add and confirm that you have the right to add it.</p>
+  </section>
+
+  <section id="termination">
+    <h2><span class="num">08</span> Termination</h2>
+    <p>You may stop using Nest and delete your account at any time. We may suspend or
+      terminate your access if you violate these Terms or use the App in a way that harms
+      other users or us. On termination, your right to use the App ends; provisions that by
+      their nature should survive — such as disclaimers and limitation of liability — will
+      continue to apply.</p>
+  </section>
+
+  <section id="disclaimers">
+    <h2><span class="num">09</span> Disclaimers</h2>
+    <p>Nest is provided "as is" and "as available", without warranties of any kind, whether
+      express or implied, including warranties of merchantability, fitness for a particular
+      purpose, and non-infringement. We do not warrant that the App will be uninterrupted,
+      error-free, or secure. Reminders and notifications are provided as a convenience and
+      should not be relied upon for critical or time-sensitive matters.</p>
+  </section>
+
+  <section id="liability">
+    <h2><span class="num">10</span> Limitation of liability</h2>
+    <p>To the maximum extent permitted by law, [[PROVIDER NAME]] will not be liable for any
+      indirect, incidental, special, consequential, or punitive damages, or for any loss of
+      data, profits, or goodwill, arising from your use of or inability to use Nest. To the
+      maximum extent permitted by law, our total liability for any claim relating to the
+      App will not exceed the greater of the amount you paid us in the twelve months before
+      the claim, or ten Canadian dollars (CAD 10).</p>
+  </section>
+
+  <section id="indemnity">
+    <h2><span class="num">11</span> Indemnification</h2>
+    <p>You agree to indemnify and hold harmless [[PROVIDER NAME]] from any claims, damages,
+      losses, or expenses (including reasonable legal fees) arising from your misuse of the
+      App or your violation of these Terms.</p>
+  </section>
+
+  <section id="appstores">
+    <h2><span class="num">12</span> App store terms</h2>
+    <p>Your use of Nest is also subject to the terms of the app store from which you
+      downloaded it (the Apple App Store or Google Play). This agreement is between you and
+      [[PROVIDER NAME]] only — not with Apple or Google — and Apple and Google are not
+      responsible for the App or its content. Where you obtained the App from the Apple App
+      Store, Apple and its subsidiaries are third-party beneficiaries of these Terms and may
+      enforce them against you.</p>
+  </section>
+
+  <section id="changes">
+    <h2><span class="num">13</span> Changes to these terms</h2>
+    <p>We may update these Terms from time to time. When we make material changes, we will
+      update the "Last updated" date above and, where appropriate, notify you in the App.
+      Your continued use of Nest after changes take effect means you accept the updated
+      Terms.</p>
+  </section>
+
+  <section id="law">
+    <h2><span class="num">14</span> Governing law</h2>
+    <p>These Terms are governed by the laws of the Province of Ontario and the federal laws
+      of Canada applicable there, without regard to conflict-of-law principles. Any disputes
+      will be subject to the courts located in Ontario, Canada, unless applicable law
+      requires otherwise.</p>
+  </section>
+
+  <section id="contact">
+    <h2><span class="num">15</span> Contact us</h2>
+    <p>If you have any questions about these Terms, contact us at
+      <strong>ehsan.hakim321@gmail.com</strong>.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Nest. See also our <a href="privacy.html">Privacy Policy</a>.</p>
+  </footer>
+
+</div>
+</body>
+</html>
