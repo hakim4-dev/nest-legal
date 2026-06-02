@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nest — Legal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7f3ec;
+    --card:#fffdf9;
+    --ink:#2b2722;
+    --ink-body:#3a342b;
+    --ink-soft:#6f675b;
+    --sage:#43614d;
+    --sage-deep:#314838;
+    --rule:#e2dac9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    background:var(--paper);
+    color:var(--ink-body);
+    font-family:'Hanken Grotesk',-apple-system,sans-serif;
+    font-size:17px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .wrap{max-width:760px;width:100%;padding:80px 28px;}
+
+  .brand{
+    font-family:'Fraunces',serif;font-weight:600;font-size:22px;
+    letter-spacing:-0.01em;color:var(--sage-deep);
+    display:inline-flex;align-items:center;gap:10px;margin-bottom:38px;
+  }
+  .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--sage);display:inline-block;}
+
+  h1{
+    font-family:'Fraunces',serif;font-weight:600;
+    font-size:clamp(38px,7vw,52px);line-height:1.05;
+    letter-spacing:-0.025em;color:var(--ink);margin-bottom:18px;
+  }
+  .lead{
+    font-size:19px;color:var(--ink-soft);line-height:1.6;
+    margin-bottom:48px;max-width:540px;
+  }
+
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--rule);
+    border-radius:16px;
+    padding:30px 28px 28px;
+    text-decoration:none;
+    color:var(--ink);
+    display:block;
+    transition:border-color .2s, transform .2s;
+    position:relative;
+  }
+  .card:hover{
+    border-color:var(--sage);
+    transform:translateY(-2px);
+  }
+  .card-num{
+    font-size:11.5px;font-weight:700;letter-spacing:0.15em;
+    color:var(--sage);text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  .card-title{
+    font-family:'Fraunces',serif;font-weight:600;
+    font-size:24px;letter-spacing:-0.015em;
+    color:var(--ink);margin-bottom:8px;
+  }
+  .card-desc{
+    color:var(--ink-soft);font-size:14.5px;line-height:1.55;
+  }
+  .card-arrow{
+    position:absolute;top:30px;right:28px;
+    color:var(--sage);font-size:18px;font-weight:500;
+    transition:transform .2s;
+  }
+  .card:hover .card-arrow{transform:translateX(3px);}
+
+  footer{
+    margin-top:64px;
+    font-size:13.5px;color:var(--ink-soft);
+  }
+
+  @media(max-width:520px){
+    .wrap{padding:60px 22px;}
+    body{font-size:16px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand"><span class="dot"></span>Nest</div>
+
+  <h1>Legal</h1>
+  <p class="lead">Policies for Nest, the family management app.</p>
+
+  <div class="cards">
+    <a class="card" href="privacy.html">
+      <span class="card-arrow">→</span>
+      <div class="card-num">01</div>
+      <div class="card-title">Privacy Policy</div>
+      <div class="card-desc">How we collect, use, and protect your information.</div>
+    </a>
+    <a class="card" href="terms.html">
+      <span class="card-arrow">→</span>
+      <div class="card-num">02</div>
+      <div class="card-title">Terms of Service</div>
+      <div class="card-desc">The agreement between you and Nest for using the app.</div>
+    </a>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 [[PROVIDER NAME]]</p>
+  </footer>
+
+</div>
+</body>
+</html>
