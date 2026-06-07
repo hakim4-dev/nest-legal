@@ -3,231 +3,714 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Account Deletion — Nest</title>
+
+<title>Delete Your Account — Nest</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-  :root{
-    --paper:#f7f3ec;
-    --card:#fffdf9;
-    --ink:#2b2722;
-    --ink-body:#3a342b;
-    --ink-soft:#6f675b;
+:root{
+    --bg:#f7f4ee;
+    --surface:#ffffff;
+    --surface-2:#fcfaf6;
+    --text:#23201b;
+    --text-soft:#6f685e;
+
     --sage:#43614d;
-    --sage-deep:#314838;
-    --rule:#e2dac9;
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
-  body{
-    background:var(--paper);
-    color:var(--ink-body);
-    font-family:'Hanken Grotesk',-apple-system,sans-serif;
+    --sage-dark:#314838;
+
+    --border:#e7dfd0;
+
+    --warning-bg:#fff8e7;
+    --warning-border:#efd79a;
+    --warning-text:#6b4f09;
+
+    --shadow:
+        0 1px 2px rgba(0,0,0,.03),
+        0 10px 30px rgba(0,0,0,.04);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(67,97,77,.06),
+            transparent 35%
+        ),
+        var(--bg);
+
+    color:var(--text);
+    line-height:1.75;
     font-size:17px;
-    line-height:1.72;
     -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:760px;margin:0 auto;padding:60px 28px 100px;}
+}
 
-  .masthead{border-bottom:1px solid var(--rule);padding-bottom:30px;margin-bottom:38px;}
-  .brand{
-    font-family:'Fraunces',serif;font-weight:600;font-size:21px;
-    letter-spacing:-0.01em;color:var(--sage-deep);
-    display:inline-flex;align-items:center;gap:9px;
-  }
-  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--sage);display:inline-block;}
-  .doc-title{
-    font-family:'Fraunces',serif;font-weight:600;
-    font-size:clamp(33px,7vw,45px);line-height:1.08;
-    letter-spacing:-0.022em;color:var(--ink);margin-top:20px;
-  }
-  .updated{
-    color:var(--ink-soft);font-size:13.5px;margin-top:14px;
-    letter-spacing:0.03em;text-transform:uppercase;
-  }
+.container{
+    max-width:860px;
+    margin:auto;
+    padding:48px 24px 100px;
+}
 
-  .lead{
-    font-size:18.5px;color:var(--ink-soft);line-height:1.62;
-    margin-bottom:42px;
-  }
+/* -------------------------------- */
+/* Brand */
+/* -------------------------------- */
 
-  .toc{
-    background:var(--card);border:1px solid var(--rule);
-    border-radius:14px;padding:24px 26px;margin-bottom:50px;
-  }
-  .toc h2{
-    font-size:11.5px;text-transform:uppercase;letter-spacing:0.15em;
-    color:var(--ink-soft);font-weight:700;margin-bottom:13px;
-  }
-  .toc ol{list-style:none;counter-reset:toc;}
-  .toc li{counter-increment:toc;}
-  .toc a{
-    color:var(--ink);text-decoration:none;font-size:15.5px;
-    display:flex;gap:12px;padding:5px 0;align-items:baseline;
-  }
-  .toc a::before{
-    content:counter(toc,decimal-leading-zero);
-    color:var(--sage);font-weight:700;font-variant-numeric:tabular-nums;
+.brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    margin-bottom:28px;
+
+    color:var(--sage-dark);
+    font-weight:700;
+    font-size:18px;
+}
+
+.brand-dot{
+    width:10px;
+    height:10px;
+    border-radius:999px;
+    background:var(--sage);
+}
+
+/* -------------------------------- */
+/* Hero */
+/* -------------------------------- */
+
+.hero{
+    background:
+        linear-gradient(
+            135deg,
+            rgba(67,97,77,.08),
+            rgba(67,97,77,.02)
+        );
+
+    border:1px solid var(--border);
+
+    border-radius:28px;
+
+    padding:40px;
+
+    margin-bottom:28px;
+}
+
+.hero-icon{
+    width:60px;
+    height:60px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:18px;
+
+    background:white;
+
+    font-size:28px;
+
+    box-shadow:var(--shadow);
+
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-family:"Fraunces",serif;
+    font-size:clamp(38px,7vw,56px);
+    line-height:1.05;
+    letter-spacing:-0.03em;
+
+    margin-bottom:14px;
+}
+
+.hero p{
+    color:var(--text-soft);
+    font-size:18px;
+    max-width:650px;
+}
+
+.updated{
+    margin-top:18px;
+    color:var(--text-soft);
     font-size:13px;
-  }
-  .toc a:hover{color:var(--sage);}
+    text-transform:uppercase;
+    letter-spacing:.12em;
+}
 
-  section{margin-bottom:36px;scroll-margin-top:22px;}
-  section h2{
-    font-family:'Fraunces',serif;font-weight:600;font-size:23px;
-    letter-spacing:-0.012em;color:var(--ink);
-    margin-bottom:14px;display:flex;gap:13px;align-items:baseline;
-  }
-  section h2 .num{
-    font-family:'Hanken Grotesk',sans-serif;font-size:13px;font-weight:700;
-    color:var(--sage);font-variant-numeric:tabular-nums;
-    flex-shrink:0;transform:translateY(-1px);
-  }
-  section p{margin-bottom:13px;}
-  section p:last-child{margin-bottom:0;}
-  strong{font-weight:700;color:var(--ink);}
-  ul,ol.steps{margin:13px 0;list-style:none;}
-  li.item{padding-left:22px;position:relative;margin-bottom:8px;}
-  li.item::before{
-    content:'';position:absolute;left:3px;top:12px;
-    width:6px;height:6px;background:var(--sage);border-radius:50%;
-  }
-  ol.steps{counter-reset:step;}
-  li.step{counter-increment:step;padding-left:32px;position:relative;margin-bottom:10px;}
-  li.step::before{
+/* -------------------------------- */
+/* Summary */
+/* -------------------------------- */
+
+.summary{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+
+    margin-bottom:28px;
+}
+
+.summary-card{
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:22px;
+
+    box-shadow:var(--shadow);
+}
+
+.summary-card .label{
+    display:block;
+
+    color:var(--text-soft);
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+
+    margin-bottom:8px;
+}
+
+.summary-card .value{
+    font-weight:700;
+    font-size:18px;
+}
+
+/* -------------------------------- */
+/* Warning */
+/* -------------------------------- */
+
+.warning{
+    background:var(--warning-bg);
+    border:1px solid var(--warning-border);
+
+    border-radius:18px;
+
+    padding:18px 20px;
+
+    color:var(--warning-text);
+
+    margin-bottom:34px;
+}
+
+.warning strong{
+    display:block;
+    margin-bottom:4px;
+}
+
+/* -------------------------------- */
+/* TOC */
+/* -------------------------------- */
+
+.toc{
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:22px;
+
+    padding:24px;
+
+    margin-bottom:34px;
+
+    box-shadow:var(--shadow);
+}
+
+.toc-title{
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.14em;
+
+    color:var(--text-soft);
+    font-weight:700;
+
+    margin-bottom:14px;
+}
+
+.toc ol{
+    list-style:none;
+}
+
+.toc li{
+    margin-bottom:10px;
+}
+
+.toc a{
+    text-decoration:none;
+    color:var(--text);
+
+    display:flex;
+    gap:12px;
+
+    transition:.2s ease;
+}
+
+.toc a:hover{
+    color:var(--sage);
+}
+
+.toc-number{
+    color:var(--sage);
+    font-weight:700;
+    min-width:24px;
+}
+
+/* -------------------------------- */
+/* Sections */
+/* -------------------------------- */
+
+.section{
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:30px;
+
+    margin-bottom:18px;
+
+    box-shadow:var(--shadow);
+
+    scroll-margin-top:20px;
+
+    transition:.2s ease;
+}
+
+.section:hover{
+    transform:translateY(-2px);
+}
+
+.section-header{
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    margin-bottom:16px;
+}
+
+.section-number{
+    width:38px;
+    height:38px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:999px;
+
+    background:rgba(67,97,77,.10);
+
+    color:var(--sage);
+
+    font-weight:700;
+    font-size:14px;
+
+    flex-shrink:0;
+}
+
+.section h2{
+    font-family:"Fraunces",serif;
+    font-size:28px;
+    line-height:1.2;
+}
+
+.section p{
+    margin-bottom:14px;
+}
+
+.section p:last-child{
+    margin-bottom:0;
+}
+
+strong{
+    color:var(--text);
+}
+
+/* -------------------------------- */
+/* Lists */
+/* -------------------------------- */
+
+.steps{
+    list-style:none;
+    margin-top:18px;
+}
+
+.steps li{
+    position:relative;
+
+    padding-left:42px;
+
+    margin-bottom:14px;
+}
+
+.steps li::before{
     content:counter(step);
-    position:absolute;left:0;top:1px;
-    width:22px;height:22px;border-radius:50%;
-    background:var(--sage);color:#fff;
-    font-size:12px;font-weight:700;
-    display:flex;align-items:center;justify-content:center;
-  }
-  a.inline{color:var(--sage);text-decoration:underline;text-underline-offset:2px;}
 
-  footer{
-    margin-top:60px;padding-top:26px;border-top:1px solid var(--rule);
-    font-size:14px;color:var(--ink-soft);
-  }
-  footer a{color:var(--sage);}
-  @media(max-width:520px){
-    .wrap{padding:44px 20px 80px;}
-    body{font-size:16px;}
-  }
+    counter-increment:step;
+
+    position:absolute;
+    left:0;
+    top:1px;
+
+    width:28px;
+    height:28px;
+
+    border-radius:999px;
+
+    background:var(--sage);
+
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:13px;
+    font-weight:700;
+}
+
+.steps{
+    counter-reset:step;
+}
+
+.bullets{
+    list-style:none;
+    margin-top:10px;
+}
+
+.bullets li{
+    position:relative;
+
+    padding-left:22px;
+
+    margin-bottom:10px;
+}
+
+.bullets li::before{
+    content:"";
+
+    position:absolute;
+    left:4px;
+    top:12px;
+
+    width:7px;
+    height:7px;
+
+    border-radius:999px;
+
+    background:var(--sage);
+}
+
+/* -------------------------------- */
+/* Footer */
+/* -------------------------------- */
+
+.footer{
+    margin-top:40px;
+
+    text-align:center;
+
+    color:var(--text-soft);
+
+    border-top:1px solid var(--border);
+
+    padding-top:30px;
+}
+
+.footer a{
+    color:var(--sage);
+    text-decoration:none;
+}
+
+/* -------------------------------- */
+/* Responsive */
+/* -------------------------------- */
+
+@media(max-width:700px){
+
+    .hero{
+        padding:30px;
+    }
+
+    .summary{
+        grid-template-columns:1fr;
+    }
+
+    .section{
+        padding:24px;
+    }
+
+    .section h2{
+        font-size:24px;
+    }
+
+    body{
+        font-size:16px;
+    }
+}
 </style>
 </head>
+
 <body>
-<div class="wrap">
 
-  <header class="masthead">
-    <div class="brand"><span class="dot"></span>Nest</div>
-    <h1 class="doc-title">Delete your account</h1>
-    <div class="updated">Last updated: May 22, 2026</div>
-  </header>
+<div class="container">
 
-  <p class="lead">
-    You can delete your Nest account at any time. This page explains how to do it,
-    what gets deleted, and what stays for the rest of your family.
-  </p>
+    <div class="brand">
+        <span class="brand-dot"></span>
+        Nest
+    </div>
 
-  <nav class="toc">
-    <h2>Contents</h2>
-    <ol>
-      <li><a href="#in-app">Delete from inside the app</a></li>
-      <li><a href="#email">Delete by email request</a></li>
-      <li><a href="#what-deleted">What gets deleted</a></li>
-      <li><a href="#what-stays">What stays</a></li>
-      <li><a href="#retention">Retention &amp; backups</a></li>
-      <li><a href="#subscriptions">Active subscriptions</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ol>
-  </nav>
+    <header class="hero">
 
-  <section id="in-app">
-    <h2><span class="num">01</span> Delete from inside the app</h2>
-    <p>This is the fastest way and happens immediately.</p>
-    <ol class="steps">
-      <li class="step">Open Nest and sign in.</li>
-      <li class="step">Tap your <strong>Profile</strong>.</li>
-      <li class="step">Scroll to <strong>Danger zone</strong> at the bottom.</li>
-      <li class="step">Tap <strong>Delete account</strong>.</li>
-      <li class="step">Type <strong>DELETE</strong> in the confirmation field and tap the button.</li>
-      <li class="step">Confirm one more time on the system prompt.</li>
-    </ol>
-    <p>You'll be signed out automatically. The account, your data, and any solo
-      families you created are removed at that moment.</p>
-  </section>
+        <div class="hero-icon">🗑️</div>
 
-  <section id="email">
-    <h2><span class="num">02</span> Delete by email request</h2>
-    <p>If you can't access the app — for example, you lost your password and
-      can't sign in — email us at <strong>nest.help@proton.me</strong> from the
-      address used to register the account.</p>
-    <p>Include the words <strong>"delete my account"</strong> in the subject line.
-      We'll process the request within 7 business days and reply to confirm.</p>
-  </section>
+        <h1>Delete your account</h1>
 
-  <section id="what-deleted">
-    <h2><span class="num">03</span> What gets deleted</h2>
-    <ul>
-      <li class="item">Your profile, email address, and account credentials</li>
-      <li class="item">Families where you are the only member, including all their content
-        (notices, calendar events, shopping lists, birthdays, contacts, meals, expenses)</li>
-      <li class="item">Your expenses, settlements, and balance history across all families</li>
-      <li class="item">Your membership in any shared families</li>
-      <li class="item">Your event attendance records</li>
-      <li class="item">Your past join requests</li>
-      <li class="item">Any feedback or support messages you sent through the app</li>
-    </ul>
-  </section>
+        <p>
+            Permanently remove your Nest account and personal data.
+            Review what happens before continuing.
+        </p>
 
-  <section id="what-stays">
-    <h2><span class="num">04</span> What stays</h2>
-    <p>In shared families where other members remain, the content you created
-      (birthdays, calendar events, shopping items, notices, meals, contacts) stays
-      so your family doesn't lose its data. Your name is removed from it — those
-      items appear as having no specific author after you leave.</p>
-    <p>This is intentional. The family is still using the app, and removing
-      everyone's data when one person leaves would harm them more than it
-      helps you.</p>
-  </section>
+        <div class="updated">
+            Last Updated • May 22, 2026
+        </div>
 
-  <section id="retention">
-    <h2><span class="num">05</span> Retention &amp; backups</h2>
-    <p><strong>Active systems.</strong> Your data is removed from our active
-      database immediately when you confirm deletion in the app, or within
-      7 business days for email requests.</p>
-    <p><strong>Backups.</strong> Our database provider (Supabase) keeps automated
-      backups for disaster recovery. Your deleted data is purged from these
-      backups within 30 days of deletion.</p>
-    <p><strong>Crash logs.</strong> Anonymized crash and diagnostic reports
-      processed by our crash-reporting provider (Sentry) follow that provider's
-      90-day retention schedule and are then removed.</p>
-    <p><strong>Legal &amp; compliance.</strong> We may retain a minimal record
-      that an account was deleted (the date, not the identity) where required
-      for legal, accounting, or fraud-prevention purposes.</p>
-  </section>
+    </header>
 
-  <section id="subscriptions">
-    <h2><span class="num">06</span> Active subscriptions</h2>
-    <p>If you have an active premium subscription, cancel it through your
-      <strong>Apple App Store</strong> or <strong>Google Play</strong> account
-      settings before — or after — deleting your account. Nest doesn't process
-      billing directly, so we can't cancel a subscription for you.</p>
-    <p>Deleting your account does <strong>not</strong> automatically cancel
-      future billing on these platforms.</p>
-  </section>
+    <div class="summary">
 
-  <section id="contact">
-    <h2><span class="num">07</span> Contact</h2>
-    <p>Questions about deletion, or trouble using the in-app or email options?
-      Contact us at <strong>nest.help@proton.me</strong>.</p>
-  </section>
+        <div class="summary-card">
+            <span class="label">Deletion Time</span>
+            <div class="value">Immediate</div>
+        </div>
 
-  <footer>
-    <p>&copy; 2026 Nest - Family Management. See also our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms of Service</a>.</p>
-  </footer>
+        <div class="summary-card">
+            <span class="label">Backup Removal</span>
+            <div class="value">Within 30 Days</div>
+        </div>
+
+        <div class="summary-card">
+            <span class="label">Recovery</span>
+            <div class="value">Not Possible</div>
+        </div>
+
+    </div>
+
+    <div class="warning">
+        <strong>Important</strong>
+        Account deletion is permanent and cannot be undone.
+    </div>
+
+    <nav class="toc">
+
+        <div class="toc-title">Contents</div>
+
+        <ol>
+            <li><a href="#in-app"><span class="toc-number">01</span>Delete from inside the app</a></li>
+            <li><a href="#email"><span class="toc-number">02</span>Delete by email request</a></li>
+            <li><a href="#deleted"><span class="toc-number">03</span>What gets deleted</a></li>
+            <li><a href="#stays"><span class="toc-number">04</span>What stays</a></li>
+            <li><a href="#retention"><span class="toc-number">05</span>Retention & backups</a></li>
+            <li><a href="#subscriptions"><span class="toc-number">06</span>Active subscriptions</a></li>
+            <li><a href="#contact"><span class="toc-number">07</span>Contact</a></li>
+        </ol>
+
+    </nav>
+
+    <section id="in-app" class="section">
+
+        <div class="section-header">
+            <div class="section-number">01</div>
+            <h2>Delete from inside the app</h2>
+        </div>
+
+        <p>
+            This is the fastest option and takes effect immediately.
+        </p>
+
+        <ol class="steps">
+            <li>Open Nest and sign in.</li>
+            <li>Open your Profile.</li>
+            <li>Scroll to the Danger Zone section.</li>
+            <li>Select Delete Account.</li>
+            <li>Type DELETE in the confirmation field.</li>
+            <li>Confirm the deletion request.</li>
+        </ol>
+
+        <p>
+            You'll be signed out automatically. Your account, personal data,
+            and any solo families you created will be permanently removed.
+        </p>
+
+    </section>
+
+    <section id="email" class="section">
+
+        <div class="section-header">
+            <div class="section-number">02</div>
+            <h2>Delete by email request</h2>
+        </div>
+
+        <p>
+            If you can't access your account, email
+            <strong>nest.help@proton.me</strong>
+            from the address used to register.
+        </p>
+
+        <p>
+            Include the phrase
+            <strong>"delete my account"</strong>
+            in the subject line.
+        </p>
+
+        <p>
+            Requests are processed within 7 business days.
+        </p>
+
+    </section>
+
+    <section id="deleted" class="section">
+
+        <div class="section-header">
+            <div class="section-number">03</div>
+            <h2>What gets deleted</h2>
+        </div>
+
+        <ul class="bullets">
+            <li>Your profile, email address and credentials.</li>
+            <li>Solo families and all associated content.</li>
+            <li>Expenses, balances and settlement history.</li>
+            <li>Memberships in shared families.</li>
+            <li>Event attendance records.</li>
+            <li>Past join requests.</li>
+            <li>Feedback and support messages.</li>
+        </ul>
+
+    </section>
+
+    <section id="stays" class="section">
+
+        <div class="section-header">
+            <div class="section-number">04</div>
+            <h2>What stays</h2>
+        </div>
+
+        <p>
+            In shared families that continue to exist, content such as
+            birthdays, events, notices, shopping items, contacts and meals
+            may remain available to other members.
+        </p>
+
+        <p>
+            Your personal identity is removed from those records wherever
+            possible, and content is retained to prevent disruption to the
+            remaining family members.
+        </p>
+
+    </section>
+
+    <section id="retention" class="section">
+
+        <div class="section-header">
+            <div class="section-number">05</div>
+            <h2>Retention & backups</h2>
+        </div>
+
+        <p>
+            <strong>Active systems:</strong>
+            Data is removed from active systems immediately after confirmation,
+            or within 7 business days for email requests.
+        </p>
+
+        <p>
+            <strong>Backups:</strong>
+            Disaster recovery backups are retained for up to 30 days before
+            deleted data is fully purged.
+        </p>
+
+        <p>
+            <strong>Crash logs:</strong>
+            Diagnostic reports processed by Sentry follow a 90-day retention
+            period before removal.
+        </p>
+
+        <p>
+            <strong>Legal obligations:</strong>
+            We may retain minimal deletion records where required by law,
+            accounting requirements or fraud prevention measures.
+        </p>
+
+    </section>
+
+    <section id="subscriptions" class="section">
+
+        <div class="section-header">
+            <div class="section-number">06</div>
+            <h2>Active subscriptions</h2>
+        </div>
+
+        <p>
+            Premium subscriptions must be cancelled through the
+            Apple App Store or Google Play.
+        </p>
+
+        <p>
+            Nest does not manage billing directly and cannot cancel
+            subscriptions on your behalf.
+        </p>
+
+        <p>
+            Deleting your account does not automatically stop future billing.
+        </p>
+
+    </section>
+
+    <section id="contact" class="section">
+
+        <div class="section-header">
+            <div class="section-number">07</div>
+            <h2>Contact</h2>
+        </div>
+
+        <p>
+            Questions about account deletion?
+        </p>
+
+        <p>
+            Contact:
+            <strong>nest.help@proton.me</strong>
+        </p>
+
+    </section>
+
+    <footer class="footer">
+        <p>
+            © 2026 Nest — Family Management
+        </p>
+
+        <p>
+            <a href="privacy.html">Privacy Policy</a>
+            •
+            <a href="terms.html">Terms of Service</a>
+        </p>
+    </footer>
 
 </div>
+
 </body>
 </html>
